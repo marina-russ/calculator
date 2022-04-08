@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="style.css" class="stylesheet" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div id="calc-display"></div>
+        <div class="calc-button-area">
+          <div class="button btn-memory">M&plus;</div>
+          <!--Memory Save-->
+          <div class="button btn-memory">M&minus;</div>
+          <!--Memory Clear-->
+          <div class="button btn-memory">MR</div>
+          <!--Memory Recall-->
+          <div data-key="" class="button btn-operator">&#9003;</div>
+          <!--Backspace
+          https://www.fileformat.info/info/unicode/char/232b/index.htm
+          "Erase to the Left" Unicode-->
+          <div data-key="103" class="button">7</div>
+          <div data-key="104" class="button">8</div>
+          <div data-key="105" class="button">9</div>
+          <div data-key="111" class="button btn-operator">&divide;</div>
+          <div data-key="100" class="button">4</div>
+          <div data-key="101" class="button">5</div>
+          <div data-key="102" class="button">6</div>
+          <div data-key="106" class="button btn-operator">&times;</div>
+          <div data-key="97" class="button">1</div>
+          <div data-key="98" class="button">2</div>
+          <div data-key="99" class="button">3</div>
+          <div data-key="109" class="button btn-operator">&minus;</div>
+          <div data-key="96" class="button">0</div>
+          <div data-key="110" class="button"><strong>&period;</strong></div>
+          <!--Decimal-->
+          <div data-key="13" class="button btn-operator" id="btn-equal">
+            &equals;
+          </div>
+          <div data-key="107" class="button btn-operator">&plus;</div>
+        </div>
+      </div>
+    </section>
+    <link rel="stylesheet" href="script.js" class="script" />
+  </body>
+</html>
