@@ -44,3 +44,9 @@
   background-color: lightgrey;
   border: 1px solid grey;
 }
+
+.button:hover {
+  background-color: darkblue;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
