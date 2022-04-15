@@ -9,8 +9,8 @@
   </head>
   <body>
     <section>
-      <div class="container">
-        <div id="calc-display"></div>
+      <div class="calculator">
+        <div id="calc-display">0</div>
         <div class="calc-button-area">
           <div class="button btn-memory">M&plus;</div>
           <!--Memory Save-->
@@ -18,24 +18,24 @@
           <!--Memory Clear-->
           <div class="button btn-memory">MR</div>
           <!--Memory Recall-->
-          <div data-key="" class="button btn-operator">&#9003;</div>
-          <!--Backspace
-          https://www.fileformat.info/info/unicode/char/232b/index.htm
-          "Erase to the Left" Unicode-->
-          <div data-key="103" class="button">7</div>
-          <div data-key="104" class="button">8</div>
-          <div data-key="105" class="button">9</div>
+          <div data-key="46" class="button btn-clear">C</div>
+          <!--Clear/Delete-->
+          <div data-key="103" class="button btn-number">7</div>
+          <div data-key="104" class="button btn-number">8</div>
+          <div data-key="105" class="button btn-number">9</div>
           <div data-key="111" class="button btn-operator">&divide;</div>
-          <div data-key="100" class="button">4</div>
-          <div data-key="101" class="button">5</div>
-          <div data-key="102" class="button">6</div>
+          <div data-key="100" class="button btn-number">4</div>
+          <div data-key="101" class="button btn-number">5</div>
+          <div data-key="102" class="button btn-number">6</div>
           <div data-key="106" class="button btn-operator">&times;</div>
-          <div data-key="97" class="button">1</div>
-          <div data-key="98" class="button">2</div>
-          <div data-key="99" class="button">3</div>
+          <div data-key="97" class="button btn-number">1</div>
+          <div data-key="98" class="button btn-number">2</div>
+          <div data-key="99" class="button btn-number">3</div>
           <div data-key="109" class="button btn-operator">&minus;</div>
-          <div data-key="96" class="button">0</div>
-          <div data-key="110" class="button"><strong>&period;</strong></div>
+          <div data-key="96" class="button btn-number">0</div>
+          <div data-key="110" class="button btn-number">
+            <strong>&period;</strong>
+          </div>
           <!--Decimal-->
           <div data-key="13" class="button btn-operator" id="btn-equal">
             &equals;
