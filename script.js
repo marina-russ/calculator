@@ -3,14 +3,16 @@ const operationButtons = document.querySelectorAll('[data-operation]');
 const equalsButton = document.querySelector('[data-equals]');
 const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-all-clear]');
-const previousOperandText = document.querySelector('[data-previous-operand]');
-const currentOperandText = document.querySelector('[data-current-operand]');
+const previousOperandTextElement = document.querySelector('[data-previous-operand]');
+const currentOperandTextElement = document.querySelector('[data-current-operand]');
 
 //MDN: Classes are a template for creating objects. They encapsulate data with code to work on that data.
 class Calculator {
-  constructor(previousOperandText, currentOperandText) {
-    this.previousOperandText = previousOperandText;
-    this.currentOperandText = currentOperandText;
+  constructor(previousOperandTextElement, currentOperandTextElement) {
+    this.previousOperandTextElement = previousOperandTextElement;
+    this.currentOperandTextElement = currentOperandTextElement;
+    this.clear();
+    // we call clear() when the calculator is first created, so that all inputs are cleared and set to their default values
   }
 
   clear() {
@@ -23,8 +25,11 @@ class Calculator {
 
   }
 
+  //converts to string so that Javascript appends the number to the end of the Operand, instead of treating + as addition operation.
+  //typing "1" and "3" gives us "13", not 4.
   appendNumber(number) {
-    this.currentOperand = number;
+    this.currentOperand = this.currentOperand.toString() + number.toString();
+
   }
 
   chooseOperation(operation) {
@@ -36,12 +41,12 @@ class Calculator {
   }
 
   updateDisplay() {
-    this.currentOperandText.innerText = this.currentOperand;
+    this.currentOperandTextElement.innerText = this.currentOperand;
   }
 }
 
 // With a class, we need to hook up the const variable buttons to the calculator object. This is done by calling new [ClassName]. Then pass everything from the constructor into it.
-const calculator = new Calculator(previousOperandText, currentOperandText);
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
 
 numberButtons.forEach(button => {
   button.addEventListener('click', (e) => {
