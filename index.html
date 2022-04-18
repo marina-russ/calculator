@@ -8,42 +8,30 @@
     <link rel="stylesheet" href="style.css" class="stylesheet" />
   </head>
   <body>
-    <section>
-      <div class="calculator">
-        <div id="calc-display">0</div>
-        <div class="calc-button-area">
-          <button class="button btn-memory">M&plus;</button>
-          <!--Memory Save-->
-          <button class="button btn-memory">M&minus;</button>
-          <!--Memory Clear-->
-          <button class="button btn-memory">MR</button>
-          <!--Memory Recall-->
-          <button data-key="46" class="button btn-clear">C</button>
-          <!--Clear/Delete-->
-          <button data-key="103" class="button btn-number">7</button>
-          <button data-key="104" class="button btn-number">8</button>
-          <button data-key="105" class="button btn-number">9</button>
-          <button data-key="111" class="button btn-operator">&divide;</button>
-          <button data-key="100" class="button btn-number">4</button>
-          <button data-key="101" class="button btn-number">5</button>
-          <button data-key="102" class="button btn-number">6</button>
-          <button data-key="106" class="button btn-operator">&times;</button>
-          <button data-key="97" class="button btn-number">1</button>
-          <button data-key="98" class="button btn-number">2</button>
-          <button data-key="99" class="button btn-number">3</button>
-          <button data-key="109" class="button btn-operator">&minus;</button>
-          <button data-key="96" class="button btn-number">0</button>
-          <button data-key="110" class="button btn-number">
-            <strong>&period;</strong>
-          </button>
-          <!--Decimal-->
-          <button data-key="13" class="button btn-operator" id="btn-equal">
-            &equals;
-          </button>
-          <button data-key="107" class="button btn-operator">&plus;</button>
-        </div>
+    <div class="calculator-grid">
+      <div id="calc-display">
+        <div class="previous-operand">123+</div>
+        <div class="current-operand">456</div>
       </div>
-    </section>
+      <button data-key="46" id="btn-clear">AC</button>
+      <button data-key="8" id="btn-backspace">DEL</button>
+      <button data-key="111" class="operator">&divide;</button>
+      <button data-key="103" class="number">7</button>
+      <button data-key="104" class="number">8</button>
+      <button data-key="105" class="number">9</button>
+      <button data-key="106" class="operator">&times;</button>
+      <button data-key="100" class="number">4</button>
+      <button data-key="101" class="number">5</button>
+      <button data-key="102" class="number">6</button>
+      <button data-key="107" class="operator">&plus;</button>
+      <button data-key="97" class="number">1</button>
+      <button data-key="98" class="number">2</button>
+      <button data-key="99" class="number">3</button>
+      <button data-key="109" class="operator">&minus;</button>
+      <button data-key="110" class="number decimal">&period;</button>
+      <button data-key="96" class="number">0</button>
+      <button data-key="13" class="operator" id="btn-equal">&equals;</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
