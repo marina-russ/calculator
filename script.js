@@ -22,26 +22,66 @@ class Calculator {
   }
 
   delete() {
-
+    this.currentOperand = this.currentOperand.toString().slice(0, -1);
   }
 
-  //converts to string so that Javascript appends the number to the end of the Operand, instead of treating + as addition operation.
-  //typing "1" and "3" gives us "13", not 4.
   appendNumber(number) {
+    if (number === '.' && this.currentOperand.includes('.')) return;
+    // if user presses decimal button but operand already has one, fxn will return instead of appending another decimal
     this.currentOperand = this.currentOperand.toString() + number.toString();
-
+    //converts to string so that Javascript appends the number to the end of the Operand, instead of treating + as addition operation. [typing "1" and "3" gives us "13", not 4, etc.]
   }
 
   chooseOperation(operation) {
-
+    if (this.currentOperand === '') {
+      return;
+      // if the current operand is empty, stop running this fxn
+    }
+    if (this.previousOperand !== '') {
+      this.compute();
+      // if previous operand is not empty, run the compution fxn
+    }
+    this.operation = operation;
+    this.previousOperand = this.currentOperand;
+    //when an operation is clicked, the current operand is 'finished' and is set to be the previous operand
+    this.currentOperand = '';
   }
 
   compute() {
-
+    let computation;
+    const prev = parseFloat(this.previousOperand);
+    const current = parseFloat(this.currentOperand);
+    //converts strings back into numbers
+    if (isNaN(prev) || isNaN(current)) {
+      return;
+    }
+    switch (this.operation) {
+      case '+':
+        computation = prev + current;
+        break;
+      case '-':
+        computation = prev - current;
+        break;
+      case '*':
+        computation = prev * current;
+        break;
+      case '÷':
+        computation = prev / current;
+        break;
+      default:
+        return;
+    }
+    this.currentOperand = computation;
+    this.operation = undefined;
+    this.previousOperand = '';
   }
 
   updateDisplay() {
     this.currentOperandTextElement.innerText = this.currentOperand;
+    if (this.operation != null) {
+      this.previousOperandTextElement.innerText = `${this.previousOperand} ${this.operation}`;
+    }
+    this.previousOperandTextElement.innerText = this.previousOperand;
   }
 }
 
@@ -49,8 +89,30 @@ class Calculator {
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
 
 numberButtons.forEach(button => {
-  button.addEventListener('click', (e) => {
+  button.addEventListener('click', () => {
     calculator.appendNumber(button.innerText);
     calculator.updateDisplay();
-  })
-})
+  });
+});
+
+operationButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    calculator.chooseOperation(button.innerText);
+    calculator.updateDisplay();
+  });
+});
+
+equalsButton.addEventListener('click', button => {
+  calculator.compute();
+  calculator.updateDisplay();
+});
+
+allClearButton.addEventListener('click', button => {
+  calculator.clear();
+  calculator.updateDisplay();
+});
+
+deleteButton.addEventListener('click', button => {
+  calculator.delete();
+  calculator.updateDisplay();
+});
