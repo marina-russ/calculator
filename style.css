@@ -10,6 +10,8 @@ body {
   padding: 0;
   margin: 0;
   background-color: #2b7296;
+  background-image: url("forest.jpg");
+  background-position: center; 
 }
 
 .calculator-grid {
@@ -19,6 +21,7 @@ body {
   min-height: 70vh;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: minmax(120px, auto) repeat(6, 100px);
+
 }
 
 /*Select all buttons inside the grid*/
@@ -26,16 +29,24 @@ body {
   cursor: pointer;
   font-size: 2rem;
   border: 1px solid white;
-  background-color: rgba(255, 255, 255, .65);
+  background-color: rgba(255, 255, 255, .80);
 }
 
 .calculator-grid > button:hover {
-  background-color: rgba(255, 255, 255, .95);
+  background-color: rgba(255, 255, 255, .98);
 }
 
 #btn-clear,
 #btn-equal {
   grid-column: span 2;
+}
+
+#btn-equal {
+  background-color: rgba(120, 183, 156, 0.8);
+}
+
+#btn-equal:hover {
+  background-color: rgba(120, 183, 156, 0.98);
 }
 
 #calc-display {
