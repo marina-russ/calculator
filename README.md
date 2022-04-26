@@ -11,6 +11,7 @@
 
 ###  Potential Future Development
 - Ability to change the operation button (-, \*, +, ÷) once selected
+- Use keyboard to input values instead of clicking buttons with a mouse
 
 ## Deployed App
 [Calculator App](https://marina-russ.github.io/calculator/)
