@@ -16,7 +16,7 @@
 ## Deployed App
 [Calculator App](https://marina-russ.github.io/calculator/)
 
-### App Screenshot
+### Application Screenshot
 ![Screenshot](calc-screenshot.png)
 
 ### Credits
