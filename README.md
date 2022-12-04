@@ -1,4 +1,5 @@
-# calculator
+# Forest Calculator
+*A calculator with a lovely forest background!*
 
 ## Concept
 - Create a calculator with JavaScript without using `eval()`.
